@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   schedule:
      - cron: '0 6 * * 1'  # Chaque lundi à 06:00 UTC
 
