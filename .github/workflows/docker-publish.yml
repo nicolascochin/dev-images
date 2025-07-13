@@ -6,7 +6,7 @@ on:
       - main
 
   schedule:
-    - cron: '0 * * * *'  # Toutes les heures à HH:00 UTC
+     - cron: '0 6 * * 1'  # Chaque lundi à 06:00 UTC
 
 jobs:
   build-and-push:
