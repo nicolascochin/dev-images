@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y sudo ssh zsh git curl  \
 
 USER $USERNAME
 
+ARG CACHEBUST=1
 # Install chezmoi & dotfiles
 RUN cd                      \
   && mkdir -p .local/bin    \
