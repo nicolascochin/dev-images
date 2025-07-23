@@ -13,6 +13,13 @@ RUN apt-get update && apt-get install -y sudo ssh zsh git curl  \
 
 USER $USERNAME
 
+ENV HOME=/home/$USERNAME
+ENV NVM_DIR=$HOME/.nvm
+
+RUN curl -fsSLq https://github.com/nvm-sh/nvm/raw/HEAD/install.sh | bash \
+  && . $NVM_DIR/nvm.sh && nvm install --lts \
+  && curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash 
+
 ARG CACHEBUST=1
 # Install chezmoi & dotfiles
 RUN cd                      \
